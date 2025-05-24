@@ -1,0 +1,36 @@
+problem:
+  name: burgers_1d
+  viscosity: 0.01
+  domain:
+    x: [-1.0, 1.0] 
+    t: [0.0, 1.0]
+  initial_condition_expr: "mx.sin(mx.pi * x)"
+  boundary_condition_expr: "0.0 * x"
+  seed: 42
+
+model:
+  type: mlp
+  layers: [2, 128, 128, 128, 128, 1]
+
+optimizer:
+  learning_rate: 0.001
+  betas_adamw: [0.95, 0.99]
+  beta_soap: 0.99
+  weight_decay: 0.000001
+  update_freq: 10
+  epochs: 2000
+  loss_weights:
+    physics: 1.0
+    initial: 1.0
+    boundary: 1.0
+  batch_sizes:
+    solution: 1000
+    initial: 1000
+    boundary: 1000
+
+logging:
+  output_dir: outputs/burgers_1d
+  log_file: burgers_1d.log
+  checkpoint_freq: 1000
+  save_model: true
+
