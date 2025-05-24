@@ -4,6 +4,8 @@ from functools import partial
 import mlx.core as mx
 import mlx.nn as nn
 from mlx.optimizers import Optimizer
+from tqdm import tqdm
+
 
 from configs.logger import Logger
 from samplers.sampler import Sampler
@@ -55,12 +57,13 @@ class PINNSolver:
             self.optimizer.update(self.model, grads)
             return loss
 
-        for ii in range(n_iter):
+        for ii in (pbar:=tqdm(range(n_iter))):
             batch = self.sampler.get_batch()
             x, t = batch['solution']
             x_ic, t_ic = batch['initial']
             x_bc, t_bc = batch['boundary']
             loss = step(x, t, x_ic, t_ic, x_bc, t_bc)
+            pbar.set_postfix_str(f"loss: {loss: 0.5e}")
             mx.eval(state)
             # Write to log file
             self.logger.log(f"{loss: 0.5e}")

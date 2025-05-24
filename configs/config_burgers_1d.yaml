@@ -18,7 +18,7 @@ optimizer:
   beta_soap: 0.99
   weight_decay: 0.000001
   update_freq: 10
-  epochs: 2000
+  epochs: 5000
   loss_weights:
     physics: 1.0
     initial: 1.0
