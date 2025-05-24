@@ -15,20 +15,6 @@ class Burgers1DEquation(PDEEquation):
     def __init__(self, nu: float):
         self.nu = nu
 
-    # def residual(self, model: nn.Module, x: mx.array, t: mx.array) -> mx.array:
-
-    #     # x is (B, 1)
-    #     # t is (B, 1)
-    #     u = model(x, t)
-
-    #     u_t = mx.grad(model, argnums=1)(x, t)
-    #     dudx = mx.grad(model, argnums=0) 
-    #     u_x = dudx(x, t)
-    #     u_xx = mx.grad(dudx, argnums=0)(x, t)
-
-    #     return u_t + u * u_x - self.nu * u_xx
-    
-
     def residual(self, model: nn.Module, x: mx.array, t: mx.array) -> mx.array:
         # x is (B, 1)
         # t is (B, 1)
