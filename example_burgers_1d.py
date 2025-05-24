@@ -114,7 +114,7 @@ Z = model(X.reshape((-1,1)), T.reshape((-1,1))).reshape((n_grid, n_grid))
 # Plotting
 plt.figure(figsize=(8, 6))
 contour = plt.contourf(T, X, Z, levels=50, cmap='magma')  # filled contour
-plt.colorbar(contour, label='f(x, t)')
+plt.colorbar(contour, label='u(x, t)')
 plt.xlabel('t')
 plt.ylabel('x')
 plt.title('Prediction')
