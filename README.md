@@ -7,3 +7,6 @@ Include parameter domains (useful for UQ)
 Compare different optimizers (currently only the SOAP optimizer is used)
 
 The code as of now can utilized by running the ```example_burgers_1d.py``` script. This produces the following plots:
+
+![loss](https://github.com/user-attachments/assets/3ef0f314-2ecf-49ba-8b00-4450c9947756)
+![prediction](https://github.com/user-attachments/assets/2d5e88ef-ff92-40c5-b59b-09baf89eb019)
