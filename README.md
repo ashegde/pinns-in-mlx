@@ -8,5 +8,5 @@ This repo is an exercise in implementing Physics-Informed Neural Networks in MLX
 
 The code can utilized by running ```example_burgers_1d.py```. This produces the following plots:
 
-![loss](https://github.com/user-attachments/assets/006cc5fd-df04-4462-8159-264c281fc5c8)
-![prediction](https://github.com/user-attachments/assets/e1248b8b-384f-4c4e-a812-871d6a8348c0)
+![loss](https://github.com/user-attachments/assets/84f7bedd-1045-48bb-b5d4-b71f872d5c70)
+![prediction](https://github.com/user-attachments/assets/f4eaa802-c74d-4db8-af50-6082b84ee58a)
