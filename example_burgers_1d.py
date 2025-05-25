@@ -21,6 +21,7 @@ from solvers.pinn_solver import PINNSolver
 path_to_config = "configs/config_burgers_1d.yaml"
 
 config = load_config(path=path_to_config)
+mx.random.seed(seed=config.problem.seed)
 equation = Burgers1DEquation(nu=config.problem.viscosity)
 physics_loss = PhysicsLoss(
     equation=equation,
