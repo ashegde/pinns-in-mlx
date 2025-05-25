@@ -32,7 +32,7 @@ class MLP(nn.Module):
 
         p = mx.concatenate([x,t], axis=-1)
         for layer in self.layers[:-1]:
-            # p = nn.tanh(layer_norm(layer(p)))
+            # p = nn.tanh(layer_norm(layer(p))) # very choppy loss
             # p = nn.gelu(layer_norm(layer(p)))
             p = nn.tanh(layer(p))
             

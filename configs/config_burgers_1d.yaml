@@ -1,10 +1,10 @@
 problem:
   name: burgers_1d
-  viscosity: 0.01
+  viscosity: 0.004
   domain:
     x: [-1.0, 1.0] 
     t: [0.0, 1.0]
-  initial_condition_expr: "mx.sin(mx.pi * x)"
+  initial_condition_expr: "-mx.sin(mx.pi * x)"
   boundary_condition_expr: "0.0 * x"
   seed: 42
 

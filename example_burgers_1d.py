@@ -117,6 +117,6 @@ contour = plt.contourf(T, X, Z, levels=50, cmap='magma')  # filled contour
 plt.colorbar(contour, label='u(x, t)')
 plt.xlabel('t')
 plt.ylabel('x')
-plt.title('Prediction')
+plt.title(f"Prediction (viscosity = {config.problem.viscosity: 0.3f})")
 plt.tight_layout()
 plt.savefig(f"{logger.config.output_dir}/prediction.png")
