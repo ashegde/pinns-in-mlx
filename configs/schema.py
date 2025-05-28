@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Callable, Optional
+from typing import Optional, Literal
 
 class DomainConfig(BaseModel):
     x: list[float]
@@ -39,18 +39,20 @@ class BatchSizes(BaseModel):
     boundary: int
 
 
-class Optimizer(BaseModel):
+class OptimizerConfig(BaseModel):
+    algorithm: Literal["adam", "adamw", "soap"]
     learning_rate: float
-    betas_adamw: list[float]
-    beta_soap: float
-    weight_decay: float
-    update_freq: int
+    betas_adam: list[float]
+    beta_soap: Optional[float]
+    weight_decay: Optional[float]
+    update_freq: Optional[int]
     epochs: int
     loss_weights: LossConfig
     batch_sizes: BatchSizes
 
 
 class LogConfig(BaseModel):
+    experiment_name: str
     output_dir: str
     log_file: str
     checkpoint_freq: int
@@ -60,5 +62,5 @@ class LogConfig(BaseModel):
 class ConfigSchema(BaseModel):
     problem: ProblemConfig
     model: ModelConfig
-    optimizer: Optimizer
+    optimizer: OptimizerConfig
     logging: LogConfig

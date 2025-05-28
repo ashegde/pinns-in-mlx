@@ -66,7 +66,7 @@ class PINNSolver:
             pbar.set_postfix_str(f"loss: {loss: 0.5e}")
             mx.eval(state)
             # Write to log file
-            self.logger.log(f"{loss: 0.5e}")
+            self.logger.log(f"{ii} \t {loss: 0.5e}")
             if self.logger.config.save_model:
                 if ii % self.logger.config.checkpoint_freq == 0:
                     self.logger.checkpoint(self.model, f"checkpoint_{ii}.npz")

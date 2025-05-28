@@ -4,8 +4,8 @@ problem:
   domain:
     x: [-1.0, 1.0] 
     t: [0.0, 1.0]
-  initial_condition_expr: "-mx.sin(mx.pi * x)"
-  boundary_condition_expr: "0.0 * x"
+  initial_condition_expr: -mx.sin(mx.pi * x)
+  boundary_condition_expr: 0.0 * x
   seed: 42
 
 model:
@@ -13,11 +13,12 @@ model:
   layers: [2, 128, 128, 128, 128, 1]
 
 optimizer:
+  algorithm: adamw
   learning_rate: 0.001
-  betas_adamw: [0.95, 0.99]
-  beta_soap: 0.99
+  betas_adam: [0.9, 0.999]
+  beta_soap: 
   weight_decay: 0.000001
-  update_freq: 10
+  update_freq: 
   epochs: 5000
   loss_weights:
     physics: 1.0
@@ -29,6 +30,7 @@ optimizer:
     boundary: 1000
 
 logging:
+  experiment_name: experiment_2_adamw
   output_dir: outputs/burgers_1d
   log_file: burgers_1d.log
   checkpoint_freq: 1000

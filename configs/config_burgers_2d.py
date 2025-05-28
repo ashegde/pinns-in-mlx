@@ -1,3 +1,0 @@
-from configs.config_burgers_1d import config
-from constraints.dirichlet import Dirichlet
-from equations.burgers_1d import Burgers1DEquation

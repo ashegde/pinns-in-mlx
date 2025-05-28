@@ -5,7 +5,7 @@ These points can then be fed into the appropriate loss.
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
-from configs.config_schema import BatchSizes
+from configs.schema import BatchSizes
 import mlx.core as mx
 
 class Sampler(ABC):
