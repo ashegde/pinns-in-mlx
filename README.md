@@ -8,5 +8,8 @@ This repo is an exercise in implementing Physics-Informed Neural Networks in MLX
 
 The code can utilized by running ```example_burgers_1d.py```. This produces the following plots:
 
-![loss](https://github.com/user-attachments/assets/84f7bedd-1045-48bb-b5d4-b71f872d5c70)
-![prediction](https://github.com/user-attachments/assets/f4eaa802-c74d-4db8-af50-6082b84ee58a)
+Training losses for different methods. Recall, new training data is sampled during each iteration:
+![loss_combined](https://github.com/user-attachments/assets/5f9f2943-dd18-49a7-9aab-115b23a52c6b)
+
+Field evolution associated with the SOAP optimizer:
+![prediction](https://github.com/user-attachments/assets/5552f9c6-b028-482c-b8b9-0beece9f43f4)
