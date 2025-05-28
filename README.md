@@ -4,7 +4,6 @@ This repo is an exercise in implementing Physics-Informed Neural Networks in MLX
 
 * Verify the implementation (solution, error plots, optimizer)
 * Include parameter domains (useful for UQ)
-* Compare different optimizers. Currently only the SOAP ("ShampoO with Adam in the Preconditioner's eigenbasis") optimizer is used.
 
 The code can utilized by running ```example_burgers_1d.py```. This produces the following plots:
 
