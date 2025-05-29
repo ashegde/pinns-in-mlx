@@ -70,3 +70,6 @@ class PINNSolver:
             if self.logger.config.save_model:
                 if ii % self.logger.config.checkpoint_freq == 0:
                     self.logger.checkpoint(self.model, f"checkpoint_{ii}.npz")
+        
+        # save final model
+        self.logger.checkpoint(self.model, f"checkpoint_final.npz")

@@ -44,7 +44,7 @@ def plot_losses(records: List[dict]):
         rows = [line.split("\t") for line in r["logger"].load_log()]
         iterations = [int(row[0].strip()) for row in rows]
         losses = [float(row[1].strip()) for row in rows]
-        plt.plot(iterations, losses, label=r["logger"].config.experiment_name)
+        plt.plot(iterations, losses, alpha=0.7, label=r["logger"].config.experiment_name)
     plt.yscale("log") 
     plt.xlabel("Iteration")
     plt.ylabel("Loss (log scale)")

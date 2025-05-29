@@ -21,12 +21,6 @@ class ModelConfig(BaseModel):
     layers: list[int]
 
 
-class SchedulerConfig(BaseModel):
-    type: str
-    step_size: int
-    gamma: float
-
-
 class LossConfig(BaseModel):
     physics: float
     initial: float
@@ -39,6 +33,12 @@ class BatchSizes(BaseModel):
     boundary: int
 
 
+class SchedulerConfig(BaseModel):
+    name: str
+    decay_rate: float
+    step_size: int
+
+
 class OptimizerConfig(BaseModel):
     algorithm: Literal["adam", "adamw", "soap"]
     learning_rate: float
@@ -49,6 +49,7 @@ class OptimizerConfig(BaseModel):
     epochs: int
     loss_weights: LossConfig
     batch_sizes: BatchSizes
+    scheduler: SchedulerConfig
 
 
 class LogConfig(BaseModel):

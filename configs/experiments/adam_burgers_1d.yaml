@@ -28,6 +28,10 @@ optimizer:
     solution: 5000
     initial: 5000
     boundary: 5000
+  scheduler:
+    name: step_decay
+    decay_rate: 0.9
+    step_size: 400
 
 logging:
   experiment_name: experiment_1_adam
