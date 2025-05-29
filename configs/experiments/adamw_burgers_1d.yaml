@@ -19,20 +19,20 @@ optimizer:
   beta_soap: 
   weight_decay: 0.000001
   update_freq: 
-  epochs: 5000
+  epochs: 20000
   loss_weights:
     physics: 1.0
     initial: 1.0
     boundary: 1.0
   batch_sizes:
-    solution: 1000
-    initial: 1000
-    boundary: 1000
+    solution: 5000
+    initial: 5000
+    boundary: 5000
 
 logging:
   experiment_name: experiment_2_adamw
   output_dir: outputs/burgers_1d
   log_file: burgers_1d.log
-  checkpoint_freq: 1000
+  checkpoint_freq: 10000
   save_model: true
 
