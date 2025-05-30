@@ -5,6 +5,7 @@ This repo is an exercise in implementing Physics-Informed Neural Networks in MLX
 * Verify the implementation (solution, error plots, optimizer)
 * Hyperparameter optimization for each experiment (independently)
 * Include parameter domain in training, which is useful for tasks such as UQ.
+* Alternate sampling strategies, e.g., Latin Hypercube Sampling or Sobol Sequence. 
 
 The code can utilized by running ```example_burgers_1d.py```. This produces the following plots:
 
